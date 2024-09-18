@@ -13,12 +13,12 @@ with open(input_file, 'r') as infile, open(output_file, 'w', newline='') as outf
     reader = csv.reader(infile)
     writer = csv.writer(outfile)
 
-    # Read the header and add the new column name 'seq_length'
+    # Here we are defining the header and adding the new column with the name 'seq_length'
     header = next(reader)
     header.append('seq_length')
     writer.writerow(header)
 
-    # Process each row, compute segment length, and write to the output file
+    # This part was complicated. Here we are processing each row, computing segment length, and writing to the result file.
     for row in reader:
         loc_start = row[2]
         loc_end = row[3]
